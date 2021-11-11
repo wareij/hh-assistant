@@ -9,9 +9,11 @@ from config import login, password
 url = "https://samara.hh.ru/"
 
 options = webdriver.FirefoxOptions()
-options.set_preference("general.useragent.override", """ '!!! СЮДА НЕОБХОДИМО ВСТАВИТЬ ВАШ User-Agent !!!' """)
+options.set_preference("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0")
 options.set_preference("dom.webnotifications.enabled", False)
-driver = webdriver.Firefox(executable_path= """ '!!! СЮДА НЕОБХОДИМО ВСТАВИТЬ ПУТЬ ДО 'geckodriver.exe' !!!' """, options=options)
+# Режим работы в фоновом режиме
+options.headless = True
+driver = webdriver.Firefox(executable_path="C:\\Wareij\\Python\\hh-assistant\\geckodriver.exe", options=options)
 
 # Функция нажатия на кнопку поднятия резюме в поиске
 def cv_lifter():
