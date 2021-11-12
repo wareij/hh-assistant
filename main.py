@@ -52,7 +52,8 @@ while True:
             time.sleep(3)
             # Передаем cookie сайту
             for cookie in pickle.load(open("hh-assistant\\cookies", "rb")):
-                driver.add_cookie(cookie)
+                driver.add_cookie(cookie)            
+            driver.refresh() 
 
             cv_lifter()
 
